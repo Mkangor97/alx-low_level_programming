@@ -8,7 +8,7 @@
  *Return: string.
  */
 
-char *_strncat(char *dest, char *src, int n);
+char *_strncat(char *dest, char *src, int n)
 {
 	int y = 0, z = 0;
 
@@ -23,7 +23,7 @@ char *_strncat(char *dest, char *src, int n);
 	}
 	if (n > 0)
 	{
-		dest[i] = '\0';
+		dest[y] = '\0';
 	}
 
 	return (dest);
