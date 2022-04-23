@@ -6,7 +6,7 @@
  *Return: the encoded string.
  */
 
-char *leet(char *s)
+char *leet(char *)
 {
 	int y = 0, z = 0;
 	char array_leet[] = {'4', '3', '1', '0', '7'};
