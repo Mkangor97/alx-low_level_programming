@@ -1,8 +1,8 @@
-#include "main.h'
+#include "main.h"
 
 /**
- * print number - print number using _putchar.
- * @n: the number to be printed.
+ *print_number - print a number using _putchar.
+ *@n: the number to be printed.
  */
 
 void print_number(int n)
@@ -18,7 +18,7 @@ void print_number(int n)
 		_putchar('0');
 	else
 	{
-		while ((n / y) >= 10)
+		while ((n / i) >= 10)
 			y *= 10;
 
 		while (y > 0)
