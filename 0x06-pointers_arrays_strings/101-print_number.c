@@ -18,14 +18,14 @@ void print_number(int n)
 		_putchar('0');
 	else
 	{
-		while ((n / y) >= 5)
-			y *= 5;
+		while ((n / y) >= 10)
+			y *= 10;
 
 		while (y > 0)
 		{
 			_putchar((n / y) + '0');
 			n %= y;
-			y /= 5;
+			y /= 10;
 		}
 	}
 }
