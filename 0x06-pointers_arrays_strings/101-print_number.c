@@ -7,13 +7,13 @@
 
 void print_number(int n)
 {
-	unsiggned int i = 1;
+	unsigned int i = 1;
 
 	if (n < 0)
 	{
 		_putchar('-');
 		n *= -1;
-
+	}
 	if (n == 0)
 		_putchar('0');
 	else
@@ -24,7 +24,7 @@ void print_number(int n)
 		{
 			_putchar((n / i) + '0');
 			n %= i;
-			i /= 10
+			i /= 10;
 		}
 	}
 }
