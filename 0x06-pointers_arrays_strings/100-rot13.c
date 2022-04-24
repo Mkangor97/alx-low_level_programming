@@ -14,18 +14,19 @@ char *rot13(char *s)
 
 	while (s[y] != '\0')
 	{
-		do
+		do 
 		{
 			if (s[y] == string_alpha[z])
 			{
 				s[y] = string_rot13[z];
 				break;
 			}
-			j++;
+			z++;
 		}
-		while (string_alpha[z] != '\0');
+	       	while (string_alpha[z] != '\0');
 		z = 0;
 		y++;
 	}
+
 	return (s);
 }
