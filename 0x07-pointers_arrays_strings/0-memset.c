@@ -1,10 +1,11 @@
 #include "main.h"
 
 /**
- * _memeset() - fills string with constant char b upto n bytes
+ * _memset - fills string with constant char b upto n bytes
+ * @s: input pointer to string
  * @b: constant char
  * @n: number of bytes
- * Retutn: pointer to s string
+ * Return: pointer to s string
  */
 
 char *_memset(char *s, char b, unsigned int n)
@@ -16,5 +17,5 @@ char *_memset(char *s, char b, unsigned int n)
 		s[y] = b;
 		y++;
 	}
-	return(s);
+	return (s);
 }
