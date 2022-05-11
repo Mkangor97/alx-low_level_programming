@@ -114,7 +114,7 @@ void print_array(char *a, int nb)
  *Return: 0.
  */
 
-int main(int argc, char *argv[])
+int main(char *argv[])
 {
 	int i, c, len1, len2, lenres;
 	char E[6] = {'E', 'r', 'r', 'o', 'r', '\n'};
