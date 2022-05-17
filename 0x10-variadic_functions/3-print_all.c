@@ -4,40 +4,40 @@
 
 /**
  * print_char - prints char
- * @parameter: valist
+ * @parameters: valist
  */
-void print_char(va_list parameter)
+void print_char(va_list parameters)
 {
-	printf("%c", va_arg(parameter, int));
+	printf("%c", va_arg(parameters, int));
 }
 
 /**
  * print_int - prints int
- * @parameter: valist
+ * @parameters: valist
  */
-void print_int(va_list parameter)
+void print_int(va_list parameters)
 {
-	printf("%d", va_arg(parameter, int));
+	printf("%d", va_arg(parameters, int));
 }
 
 /**
  * print_float - prints float
- * @parameter: valist
+ * @parameters: valist
  */
-void print_float(va_list parameter)
+void print_float(va_list parameters)
 {
-	printf("%f", va_arg(parameter);
+	printf("%f", va_arg(parameters, double));
 }
 
 /**
  * print_string - prints string
- * @parameter: valist
+ * @parameters: valist
  */
-void print_string(va_list parameter)
+void print_string(va_list parameters)
 {
 	char *s;
 
-	s = va_arg(parameter, char *);
+	s = va_arg(parameters, char *);
 
 	if (s == NULL)
 	{
@@ -55,7 +55,7 @@ void print_all(const char * const format, ...)
 {
 	char *separator = "";
 	int i, j = 0;
-	va_list parameter;
+	va_list parameters;
 
 	datatype choice[] = { {'c', print_char},
 			      {'i', print_int},
@@ -64,7 +64,7 @@ void print_all(const char * const format, ...)
 			      {'\0', NULL} };
 
 	/* iterate format; if datatype matched, access function via struct */
-	va_start(parameter, format);
+	va_start(parameters, format);
 	while (format != NULL && format[j] != '\0')
 	{
 		i = 0;
@@ -73,13 +73,13 @@ void print_all(const char * const format, ...)
 			if (choice[i].letter == format[j])
 			{
 				printf("%s", separator);
-				choice[i].func(parameter); /*access va_arg later*/
+				choice[i].func(parameters); /*access va_arg later*/
 				separator = ", ";
 			}
 			i++;
 		}
 		j++;
 	}
-	va_end(parameter);
+	va_end(parameters);
 	printf("\n");
 }
