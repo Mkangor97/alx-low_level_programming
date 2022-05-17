@@ -30,7 +30,7 @@ void print_int(va_list arg)
 {
 	int parameter;
 
-	num = va_arg(arg, int);
+	parameter = va_arg(arg, int);
 	printf("%d", parameter);
 }
 
@@ -43,7 +43,7 @@ void print_float(va_list arg)
 {
 	float parameter;
 
-	num = va_arg(arg, double);
+	parameter = va_arg(arg, double);
 	printf("%f",parameter);
 }
 
