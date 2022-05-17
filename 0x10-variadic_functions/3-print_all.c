@@ -1,0 +1,85 @@
+#include <stdarg.h>
+#include <stdio.h>
+#include "variadic_functions.h"
+
+/**
+ * print_char - prints char
+ * @parameter: valist
+ */
+void print_char(va_list parameter)
+{
+	printf("%c", va_arg(parameter, int));
+}
+
+/**
+ * print_int - prints int
+ * @parameter: valist
+ */
+void print_int(va_list parameter)
+{
+	printf("%d", va_arg(parameter, int));
+}
+
+/**
+ * print_float - prints float
+ * @parameter: valist
+ */
+void print_float(va_list parameter)
+{
+	printf("%f", va_arg(parameter);
+}
+
+/**
+ * print_string - prints string
+ * @parameter: valist
+ */
+void print_string(va_list parameter)
+{
+	char *s;
+
+	s = va_arg(parameter, char *);
+
+	if (s == NULL)
+	{
+		printf("(nil)");
+		return;
+	}
+	printf("%s", s);
+}
+
+/**
+ * print_all - print varying input of ints, chars, floats, and strings
+ * @format: an array of chars signifying which data type to print
+ */
+void print_all(const char * const format, ...)
+{
+	char *separator = "";
+	int i, j = 0;
+	va_list parameter;
+
+	datatype choice[] = { {'c', print_char},
+			      {'i', print_int},
+			      {'f', print_float},
+			      {'s', print_string},
+			      {'\0', NULL} };
+
+	/* iterate format; if datatype matched, access function via struct */
+	va_start(parameter, format);
+	while (format != NULL && format[j] != '\0')
+	{
+		i = 0;
+		while (choice[i].letter != '\0')
+		{
+			if (choice[i].letter == format[j])
+			{
+				printf("%s", separator);
+				choice[i].func(parameter); /*access va_arg later*/
+				separator = ", ";
+			}
+			i++;
+		}
+		j++;
+	}
+	va_end(parameter);
+	printf("\n");
+}
