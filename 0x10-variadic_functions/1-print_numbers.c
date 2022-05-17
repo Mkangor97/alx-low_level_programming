@@ -7,21 +7,21 @@
  * n - The number of integers passed to the function.
  */
 
- void print_numbers(const char *separator, const unsigned int n, ...)
- {
- va_list parameters;
- unsigned int i;
+void print_numbers(const char *separator, const unsigned int n, ...)
+{
+va_list parameters;
+unsigned int i;
 
- va_start(parameters, n);
+va_start(parameters, n);
 
- for (i = 0; i < n; i++)
- {
+for (i = 0; i < n; i++)
+{
 	 printf("%d", va_arg(parameters, int ));
 
 	 if (i !=(n-1) && separator != NULL)
 		 printf("%s", separator);
- }
- printf("\n");
+}
+printf("\n");
 
- va_end(parameters);
- }
+va_end(parameters);
+}
