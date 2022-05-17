@@ -4,29 +4,29 @@
 
 /**
  * print_char - prints char
- * @ap: valist
+ * @parameter: valist
  */
-void print_char(va_list ap)
+void print_char(va_list parameter)
 {
-	printf("%c", va_arg(ap, int));
+	printf("%c", va_arg(parameter, int));
 }
 
 /**
  * print_int - prints int
- * @ap: valist
+ * @parameter: valist
  */
-void print_int(va_list ap)
+void print_int(va_list parameter)
 {
-	printf("%d", va_arg(ap, int));
+	printf("%d", va_arg(parameter, int));
 }
 
 /**
  * print_float - prints float
- * @ap: valist
+ * @parameter: valist
  */
-void print_float(va_list ap)
+void print_float(va_list parameter)
 {
-	printf("%f", va_arg(apparameter);
+	printf("%f", va_arg(parameter);
 }
 
 /**
